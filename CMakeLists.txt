@@ -4,16 +4,18 @@ project(infamous-plugins)
 
 set(LIBDIR lib CACHE STRING "Specifies the name of the library path")
 
-foreach(plug casynth envfollower hip2b powerup powercut cheapdist stuck ewham lushlife bentdelay mindi octolo)
+#foreach(plug casynth envfollower hip2b powerup powercut cheapdist stuck ewham lushlife bentdelay mindi octolo)
+
+foreach(plug hip2b powercut stuck ewham mindi)
     add_subdirectory(src/${plug})
 endforeach(plug)
 
-add_executable(infamous-rule
-    src/rule.c
-)
-install(TARGETS infamous-rule
-  DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
-)
+#add_executable(infamous-rule
+#    src/rule.c
+#)
+#install(TARGETS infamous-rule
+#  DESTINATION ${CMAKE_INSTALL_PREFIX}/bin
+#)
 
 # uninstall target
 configure_file(
